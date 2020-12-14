@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Efe Garage</title>
+</head>
+<body>
+
+  <p>yönlendiriliyorsunuz . .</p>
+
+  <script>
+    
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const url = urlParams.get('url')
+
+    if(!url){
+
+      //window.location.href = "https://www.google.com";
+
+    }
+
+    const direction = url.split("https://youtu.be/");
+    const app = "vnd.youtube://m.youtube.com/watch?v=" + direction[1];
+  
+    if( /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ) {
+        window.location = app;
+    } 
+    else {
+        window.location = url;
+    }
+
+  </script>
+</body>
+</html>
